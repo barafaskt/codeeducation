@@ -12,4 +12,4 @@ WORKDIR /go/src/hellogo
 
 COPY --from=builder /go/src/hellogo .
 
-CMD [ "go", "run", "main.go"]
+CMD ["/bin/sh"]
