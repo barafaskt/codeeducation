@@ -1,7 +1,15 @@
-FROM golang
+FROM golang:1.15.5-alpine AS builder
 
 WORKDIR /go/src/hellogo
 
 COPY hellogo/ .
 
-CMD ["go","run","hellogo.go"]
+RUN go build main.go
+
+FROM alpine
+
+WORKDIR /go/src/hellogo
+
+COPY --from=builder /go/src/hellogo .
+
+CMD [ "go", "run", "main.go"]
