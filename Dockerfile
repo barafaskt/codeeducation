@@ -5,7 +5,8 @@ FROM golang:1.15.5-alpine AS builder
 # A opção --no-cache permite não armazenar o índice em cache localmente,
 # o que é útil para manter os contêineres pequenos.
 
-# Upx usado para reduzir o tamanho dos arquivos de programas.
+# build-base usa no alpine como base de montagem de construção de software
+# upx usado para reduzir o tamanho dos arquivos de programas.
 RUN apk update && apk add --no-cache git \
     build-base \ 
     upx
