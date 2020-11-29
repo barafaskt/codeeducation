@@ -7,8 +7,7 @@ RUN apk update && apk add --no-cache git \
 WORKDIR /go/src/hellogo
 
 COPY hellogo/ .
-
-RUN CGO_ENABLED=0 GOOS=linux 
+#RUN CGO_ENABLED=0 GOOS=linux 
 RUN go get -d -v 
 RUN go build -o /go/src/hellogo/main
 RUN upx main
