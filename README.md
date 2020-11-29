@@ -12,7 +12,7 @@
 ```sh
   docker images
 ```
---OU-
+-OU-
 ```sh
   docker images barafaskt/hellogo
 ```
